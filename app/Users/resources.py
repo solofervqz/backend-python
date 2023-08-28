@@ -1,7 +1,7 @@
 from flask.views import MethodView
 from flask import Blueprint, request
 
-users_blueprint = Blueprint("users_blueprint", __name__,url_prefix='/api/')
+users_blueprint = Blueprint("users_blueprint", __name__, url_prefix='/api/')
 
 class UsersList(MethodView):
     def get(self):
@@ -19,6 +19,9 @@ class Users(MethodView):
             return{"message:" "No has ingresado tu username."},400
         
         return
+    
+    new_user = Users(username, email, rol)
+    new_user
         
 users_blueprint.add_url_rule(
     'users',
